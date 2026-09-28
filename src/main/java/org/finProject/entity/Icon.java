@@ -6,11 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "users")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(name = "icons")
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class User {
+public class Icon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,16 +20,11 @@ public class User {
     private String name;
 
     @Setter
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Setter
     @Column(nullable = false)
-    private String password;
+    private String code;
 
-    public User(String name, String email, String password) {
+    public Icon(String name, String code) {
         this.name = name;
-        this.email = email;
-        this.password = password;
+        this.code = code;
     }
 }
