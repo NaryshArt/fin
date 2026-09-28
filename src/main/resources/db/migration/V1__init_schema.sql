@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `types`(
 CREATE TABLE IF NOT EXISTS `users` (
     `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` varchar(20) NOT NULL,
-    `email` varchar(50) NOT NULL,
+    `email` varchar(50) NOT NULL UNIQUE,
     `password_hash` varchar(255) NOT NULL,
 );
 
